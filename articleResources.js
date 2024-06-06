@@ -1,21 +1,11 @@
 const mongoose = require("mongoose");
 
 const articleSchema = mongoose.Schema(
-  {
-    name: {
-      type: String,
-      required: [true, "Please enter the name of the article. "],
-    },
-
-    info: {
-      type: String,
-      required: [true, "Please enter information about the article."],
-    },
-
-    posted_by: {
-      type: String,
-      required: true,
-    },
+  {  name: {  type: String, required: true,   },
+  info: {   type: String,   required: true, },
+ posted_by: {  type: String,  required: true,  },
+    posted_at: {  type: Date, default: Date.now(),
+    },  last_updated_at: { type: Date, default: Date.now(),  },
   },
   {
     timestamps: true,
