@@ -11,9 +11,11 @@ app.use("/", userRouter);
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static("public"));
 
+//I have deliberately replaced my mongoDB password with [PASSWORD] so as to not reveal it.
+
 mongoose
   .connect(
-    "mongodb+srv://vivaanjha:JFpM9GOh6oj9k8Tt@elite-r3-task3-crudapi.ahs5hb4.mongodb.net/Elite-R3-Task3-CRUDAPI?retryWrites=true&w=majority&appName=Elite-R3-Task3-CRUDAPI"
+    "mongodb+srv://vivaanjha:[PASSWORD]@elite-r3-task3-crudapi.ahs5hb4.mongodb.net/Elite-R3-Task3-CRUDAPI?retryWrites=true&w=majority&appName=Elite-R3-Task3-CRUDAPI"
   )
   .then(() => {
     console.log("MongoDB is connected.");
