@@ -8,7 +8,7 @@ const userRouter = require("./routes.js");
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 app.use("/", userRouter);
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.static("public"));
 
 mongoose
