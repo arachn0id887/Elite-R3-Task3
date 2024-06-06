@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Update article</title>
+    <link rel="stylesheet" href="/public/style.css" />
+  </head>
+  <body>
+    <header>
+      <p class="heading">ARTICLE-SWIFTPRO</p>
+      <a href="/">Homepage</a>
+    </header>
+    <ul>
+      <li><a href="/article">All Articles</a></li>
+      <li><a href="/article/create">Create Article</a></li>
+      <li><a href="/article/:id">Get an article by ID.</a></li>
+      <li><a href="/article/:id/update">Update article</a></li>
+      <li><a href="/article/:id/delete">Delete article</a></li>
+    </ul>
+    <article class="updatearticle">
+      <h1>Update your article:</h1>
+      <form action="/article/:id/update" method="post">
+        <label for="mame">Name:</label>
+        <input type="text" name="name" id="name" required />
+        <br />
+        <br />
+        <label for="info">Info:</label>
+        <textarea name="info" id="info" required></textarea>
+        <br />
+        <br />
+        <label for="posted_by">Posted By: </label>
+        <input name="posted_by" id="posted_by" type="text" required />
+        <br />
+        <br />
+        <button type="submit" class="savebutton">Save</button>
+      </form>
+    </article>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/style.css" />
+    <title>Home</title>
+  </head>
+  <body>
+    <header>
+      <p class="heading">ARTICLE-SWIFTPRO</p>
+      <a href="/">Homepage</a>
+    </header>
+    <ul>
+      <li><a href="/article">All Articles</a></li>
+      <li><a href="/article/create">Create Article</a></li>
+      <li><a href="/article/:id">Get an article by ID.</a></li>
+      <li><a href="/article/:id/update">Update article</a></li>
+      <li><a href="/article/:id/delete">Delete article</a></li>
+    </ul>
+    <article class="routes">
+      <h1>You can use the following routes to do various activities:</h1>
+      <p>/article/create : Create an article</p>
+      <p>/article : Fetch all articles.</p>
+      <p>/article/:id : Fetch an article by its ID.</p>
+      <p>/article/:id/update : Update an article by its ID.</p>
+      <p>/article/:id/delete : Delete an article.</p>
+    </article>
+  </body>
+</html>
