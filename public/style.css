@@ -1,0 +1,127 @@
+/*CSS FOR ALL EJS FILES */
+
+html {
+  height: 100%;
+}
+body{
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: turquoise;
+}
+header h1{
+  font-size: 2.5em;
+  margin-left: 10px;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+nav ul li {
+  margin: 0 20px
+}
+nav ul li a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.5em;
+}
+nav ul li a:hover {
+  text-decoration: underline;
+  color: blue;
+}
+footer {
+  height: 50px;
+  background-color: hsla(174, 72%, 56%, 0.794);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 50px;
+  font-size: 1.75em;
+  margin-top: auto;
+  max-width: 100vw;
+}
+
+.index-art {
+  text-align: center;
+  padding: 10px;
+}
+.index-art h2 {
+  font-weight: bolder;
+  text-decoration: underline;
+  font-size: 2em;
+}
+.index-art p {
+  font-size: 1.2em;
+}
+.routing {
+  margin-left: 20px;
+  font-size: 1.18em;
+}
+.submit {
+  margin-left: 20px;
+  width: 80px;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  background-color: lightgreen;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
+.submit a {
+  text-decoration: none;
+  color: black;
+}
+.form {
+  align-self: center;
+  font-size: 1.45em;
+}
+.title {
+  align-self: center;
+  text-decoration: underline;
+}
+.titleu {
+  margin-left: 40%;
+  text-decoration: underline;
+}
+.formu {
+  margin-left: 40%;
+  font-size: 1.45em;
+}
+.box {
+  border: 2px solid;
+  display: inline-block;
+  text-align: center;
+  padding: 10px 0;
+  margin: 10px 10px;
+  font-size: 1.5em;
+  overflow: hidden;
+}
+.articleinfo {
+  align-self: center;
+  border: 2px solid;
+  overflow: hidden;
+  margin-top: 27.5px;
+  padding: 40px;
+  max-width: 100vw;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.articleinfo:hover {
+  transform: scale(1.1);
+}
+.articleinfo h1 {
+  transform: translateY(-20px);
+  font-size: 1.5em;
+}
