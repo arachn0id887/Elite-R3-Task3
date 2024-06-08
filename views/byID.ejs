@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetch Article | ArticleSwift</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="shortcut icon" href="/article-icon.svg" type="image/svg" />
+  </head>
+  <body>
+    <header>
+      <h1>ArticleSwift</h1>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/article/create">Create new Article</a></li>
+          <li><a href="/article">All Articles</a></li>
+        </ul>
+      </nav>
+    </header>
+    <article class="articleinfo">
+      <h1>Article name: <%= article.name %></h1>
+      <h2>Article information: <%= article.info %></h2> <br>
+      <h1>Posted By: <%= article.posted_by %></h1>
+      <h1>Id: <%= article.id %></h1>
+      <h2>Created at: <%= article.createdAt.toLocaleString() %></p>
+      <h2>Last updated at: <%= article.updatedAt.toLocaleString() %></p>
+      <button class="submit">
+        <a href="/article/<%= article.id %>/update">Update</a>
+      </button>
+      <button class="submit">
+        <a href="/article/<%= article.id %>/delete">Delete</a>
+      </button>
+    </article>
+    <footer>
+      <p>&copy; ArticleSwift 2024</p>
+      <p>Instagram | Twitter | Discord</p>
+    </footer>
+  </body>
+</html>

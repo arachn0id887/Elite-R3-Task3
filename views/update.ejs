@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Update Article | ArticleSwift</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="shortcut icon" href="/article-icon.svg" type="image/svg" />
+  </head>
+  <body>
+    <header>
+      <h1>ArticleSwift</h1>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/article/create">Create new Article</a></li>
+          <li><a href="/article">All Articles</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section>
+      <h1 class="titleu">Update Article</h1>
+      <form
+        action="/article/<%= article.id %>/update?_method=PUT"
+        method="post"
+        class="formu"
+      >
+        <label for="name">Name</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          value="<%= article.name %>"
+          required
+        />
+        <br />
+        <br />
+        <label for="info">Article Information:</label>
+        <textarea name="info" id="info" required><%= article.info %></textarea>
+        <br /><br />
+        <label for="posted_by">Posted By:</label>
+        <input
+          name="posted_by"
+          id="posted_by"
+          type="text"
+          value="<%= article.posted_by %>"
+          required
+        />
+        <br /><br />
+        <p>Created at: <%= article.createdAt.toLocaleString() %></p>
+
+        <p>Last updated at: <%= article.updatedAt.toLocaleString() %></p>
+        <button type="submit" class="submit">Update</button>
+      </form>
+    </section>
+    <footer>
+      <p>&copy; ArticleSwift 2024</p>
+      <p>Instagram | Twitter | Discord</p>
+    </footer>
+  </body>
+</html>
