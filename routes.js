@@ -1,11 +1,62 @@
 const express = require("express");
 const router = express.Router();
 const Article = require("./model.js");
+const User = require("./usermodel.js");
+var loggedIn = false;
 
+//HOME
 router.get("/", (req, res) => {
-  res.render("index");
+  if (loggedIn) {
+    res.render("index");
+  } else {
+    res.redirect("/signup");
+  }
 });
 
+//SIGNUP
+router.get("/signup", (req, res) => {
+  res.render("signup", { user: new User() });
+});
+
+router.post("/signup", async (req, res) => {
+  let user = {
+    username: req.body.username,
+    password: req.body.password,
+  };
+  try {
+    await User.insertMany([user]);
+    loggedIn = true;
+    res.redirect("/");
+  } catch (error) {
+    res.status(500).send(error);
+    console.log(error);
+  }
+});
+
+//LOGIN
+router.get("/login", (req, res) => {
+  res.render("login");
+});
+router.post("/login", async (req, res) => {
+  try {
+    const auth = await User.findOne({ username: req.body.username });
+    if (auth.password === req.body.password) {
+      loggedIn = true;
+      res.redirect("/");
+    } else {
+      res.send("Wrong password.");
+    }
+  } catch {
+    res.send("User does not exist.");
+  }
+});
+
+//LOGOUT
+router.post("/logout", (req, res) => {
+  loggedIn = false;
+});
+
+//ALL
 router.get("/article", async (req, res) => {
   try {
     const articles = await Article.find().sort({ createdAt: "desc" });
@@ -16,6 +67,7 @@ router.get("/article", async (req, res) => {
   }
 });
 
+//CREATE
 router.get("/article/create", (req, res) => {
   res.render("create", { article: new Article() });
 });
@@ -35,11 +87,7 @@ router.post("/article/create", async (req, res) => {
   }
 });
 
-router.get("/article/:id", async (req, res) => {
-  const article = await Article.findById(req.params.id);
-  if (article == null) res.redirect("/");
-  res.render("byID", { article: article });
-});
+//BY ID
 
 router.get("/article/:id", async (req, res) => {
   try {
@@ -54,6 +102,8 @@ router.get("/article/:id", async (req, res) => {
     console.log(error);
   }
 });
+
+//UPDATE
 
 router.get("/article/:id/update", async (req, res) => {
   const articleId = req.params.id;
@@ -84,6 +134,7 @@ router.put("/article/:id/update", async (req, res) => {
   }
 });
 
+//DELETE
 router.get("/article/:id/delete", async (req, res) => {
   const articleId = req.params.id;
   const article = await Article.findById(articleId);
