@@ -125,3 +125,30 @@ footer {
   transform: translateY(-20px);
   font-size: 1.5em;
 }
+#authform {
+  transform: scale(1.4);
+  margin-top: 50px;
+}
+.authmsg a {
+  text-decoration: none;
+  color: rgb(0, 119, 255);
+}
+.logoutbtn {
+  width: 100px;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  background-color: lightgreen;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.logoutbtn a:hover {
+  text-decoration: none;
+  color: hsla(0, 0%, 0%, 0.6);
+}
+.logoutbtn a:active {
+  text-decoration: none;
+  color: hsla(0, 0%, 0%, 0.3);
+}
