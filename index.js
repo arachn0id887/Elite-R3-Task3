@@ -6,6 +6,7 @@ const useRouter = require("./routes.js");
 const path = require("path");
 const bodyParser = require("body-parser");
 const methodOverride = require("method-override");
+const bcrypt = require("bcrypt");
 
 //MIDDLEWARE
 app.use(methodOverride("_method"));
@@ -17,10 +18,9 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(bodyParser.json());
 
 // MONGODB CONNECTION
-//I have deliberately replaced my actual password with [mongoDBpassword].
 mongoose
   .connect(
-    "mongodb+srv://vivaanjha:[mongoDBpassword]@r3t3-crudapi.qkgv8pw.mongodb.net/?retryWrites=true&w=majority&appName=R3T3-CRUDAPI"
+    "mongodb+srv://vivaanjha:DDxiSVS96UNHb3Ke@r3t3-crudapi.qkgv8pw.mongodb.net/?retryWrites=true&w=majority&appName=R3T3-CRUDAPI"
   )
   .then(() => {
     console.log("Connected to MongoDB.");
