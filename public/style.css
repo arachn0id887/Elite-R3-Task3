@@ -106,12 +106,12 @@ footer {
   padding: 10px 0;
   margin: 10px 10px;
   font-size: 1.5em;
-  overflow: hidden;
+  overflow: auto;
 }
 .articleinfo {
   align-self: center;
   border: 2px solid;
-  overflow: hidden;
+  overflow: auto;
   margin-top: 27.5px;
   padding: 40px;
   max-width: 100vw;
